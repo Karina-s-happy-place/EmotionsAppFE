@@ -42,10 +42,17 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 ![Mockito](https://img.shields.io/badge/-Mockito-48C9B0?style=flat&logo=java&logoColor=white)
 
 ## Required documentation 
-- [![Organization](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)](https://jesusenjamio.atlassian.net/jira/core/projects/GTMS/board)
-- [![Breafing](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)](https://www.figma.com/design/563btG1aZfBqVuz5EeGwEW/CLON-FILMIN?node-id=0-1&p=f&t=ZkYxLDURlvCPhQSq-0)
-- [![Userflows](https://img.shields.io/badge/-Lucidchart-5B5D5D?logo=lucidchart&logoColor=white&style=flat)](https://lucid.app/lucidchart/205d7641-21ce-4592-8c5c-9f929cbad134/edit?page=0_0&invitationId=inv_045b2715-511a-4aec-a880-eaa1992f5b0b#)
-- [![Userstories](https://img.shields.io/badge/-Canva-00C4CC?logo=canva&logoColor=white&style=flat)](https://www.canva.com/design/DAGc6KI4mv8/EGSfCAW6HFgVCgSxBKEgLA/view?utm_content=DAGc6KI4mv8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h115e5b67ec)
+- [![Jira](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)](https://karinalrg16.atlassian.net/jira/software/projects/EA/boards/3/backlog)
+![Jira-EmotionsApp](https://github.com/user-attachments/assets/e08f0173-ccfa-470d-954a-0ced45b2bbf9)
+
+- [![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)](https://www.figma.com/design/cNBoRNBtppC03OO0Ux6Ox3/EmotionsApp?node-id=82-249&t=sW6QXyvjV5GdNMvb-0)
+- ![Figma-EmotionsApp](https://github.com/user-attachments/assets/79bb27e6-5d94-4f04-abff-54b0148a37e5)
+
+[![Draw.io](https://img.shields.io/badge/-Draw.io-F08705?style=flat&logo=diagrams.net&logoColor=white)](https://app.diagrams.net/#G1e1u7lGxQaPTmuFsytsU6ry0hGtV9M9M7#%7B%22pageId%22%3A%22YR-R1HGNXxgNcGl1_lkE%22%7D)
+![userflow](https://github.com/user-attachments/assets/94596a70-9356-4b34-a671-2abe6e0a996b)
+
+[![Confluence](https://img.shields.io/badge/-Confluence-172B4D?style=flat&logo=confluence&logoColor=white)](https://karinalrg16.atlassian.net/wiki/spaces/EmotionsApp/overview)\
+![Confluence-EmotionsApp](https://github.com/user-attachments/assets/5335fe33-2eb2-41e9-b1ae-3a806e4086dc)
 
 ## 📦 Requirements
 
