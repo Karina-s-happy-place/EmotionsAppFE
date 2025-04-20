@@ -51,8 +51,9 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 [![Draw.io](https://img.shields.io/badge/-Draw.io-F08705?style=flat&logo=diagrams.net&logoColor=white)](https://app.diagrams.net/#G1e1u7lGxQaPTmuFsytsU6ry0hGtV9M9M7#%7B%22pageId%22%3A%22YR-R1HGNXxgNcGl1_lkE%22%7D)
 ![userflow](https://github.com/user-attachments/assets/94596a70-9356-4b34-a671-2abe6e0a996b)
 
-[![Confluence](https://img.shields.io/badge/-Confluence-172B4D?style=flat&logo=confluence&logoColor=white)](https://karinalrg16.atlassian.net/wiki/spaces/EmotionsApp/overview)\
-![Confluence-EmotionsApp](https://github.com/user-attachments/assets/5335fe33-2eb2-41e9-b1ae-3a806e4086dc)
+[![Mermaid](https://img.shields.io/badge/-Mermaid-0084C8?style=flat&logo=mermaid&logoColor=white)](https://www.mermaidchart.com/app/projects/8fabd736-e28b-46db-a01a-06773fcba785/diagrams/a3bbbbf6-ac75-4dc7-ad18-0c3a48464d95/version/v0.1/edit)
+![UML-EmotionsApp](https://github.com/user-attachments/assets/64aad70d-0b2a-493c-9b73-452e097fd2a7)
+
 
 ## 📦 Requirements
 
