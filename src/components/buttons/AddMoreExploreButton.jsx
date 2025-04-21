@@ -7,4 +7,3 @@ export const AddMoreExploreButton = ({ text, type = "button", ...props }) => (
       {text}
     </button>
   );
-  

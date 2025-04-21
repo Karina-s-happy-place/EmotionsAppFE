@@ -1,19 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { LogingRegisterButton } from "../components/buttons/LogingRegisterButton";
-import { AddMoreExploreButton } from "../components/buttons/AddMoreExploreButton";
+import React, { useState } from "react";
+import { LoginRegisterForm } from "../components/forms/LoginRegisterForm";
 
+export const Login = () => {
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
 
-const Login = () =>{
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   return (
-    <div>
-      <h1>Página de Login</h1>
-      <Link to="/register">Ir al registro</Link><br />
-      <Link to="/dashboard">Ir al dashboard</Link>
-      <LogingRegisterButton text="Iniciar sesión" onClick={() => console.log("Login")} />
-      <AddMoreExploreButton text="Explorar más" onClick={() => console.log("Explorar más")} />
+    <div className="flex justify-center items-center min-h-screen">
+      <LoginRegisterForm
+        email={form.email}
+        onEmailChange={handleChange}
+        password={form.password}
+        onPasswordChange={handleChange}
+        onSubmit={() => console.log("Iniciar sesión")}
+      />
     </div>
   );
-}
-
-export default Login;
+};
