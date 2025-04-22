@@ -14,14 +14,14 @@ export const LoginRegisterForm = ({
   extra,
 }) => {
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="relative w-[384px] bg-[#F1E5DA]/90 rounded-[32px] overflow-hidden p-4 sm:p-8">
-        <div className="text-center text-[#5E4F3E] text-[36px] font-averia font-bold leading-[46.8px] mb-6">
+    <div className="h-screen flex items-center justify-center px-4">
+      <div className="relative w-full max-w-[384px] sm:max-w-[450px] md:max-w-[500px] lg:max-w-[600px] bg-[#F1E5DA]/90 rounded-[32px] overflow-hidden p-4 sm:p-6 md:p-8">
+        <div className="text-center text-[#5E4F3E] text-lg sm:text-xl md:text-2xl lg:text-3xl font-averia font-bold leading-tight mb-6">
           {title}
         </div>
 
         {inputs.map((input) => (
-          <div key={input.name} className="mb-4 w-full max-w-sm">
+          <div key={input.name} className="mb-4 w-full max-w-xs sm:max-w-sm">
             <FormInput
               label={input.label}
               type={input.type}
@@ -44,7 +44,7 @@ export const LoginRegisterForm = ({
         </div>
 
         {bottomText && (
-          <div className="text-center text-[#392F24] text-[14px] font-averia">
+          <div className="text-center text-[#392F24] text-sm sm:text-base font-averia">
             {bottomText}{" "}
             <Link
               to={bottomLinkHref}
