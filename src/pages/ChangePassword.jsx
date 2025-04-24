@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LoginRegisterForm } from "../components/forms/LoginRegisterForm";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export const ChangePassword = () => {
   const navigate = useNavigate();
@@ -9,14 +9,23 @@ export const ChangePassword = () => {
     password: "",
     confirmPassword: "",
   });
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
+    if (error) setError("");
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!form.email || !form.password || !form.confirmPassword) {
+      setError("Por favor, completa todos los campos");
+      return;
+    }
+
     if (form.password !== form.confirmPassword) {
-      alert("Las contraseñas no coinciden");
+      setError("Las contraseñas no coinciden");
       return;
     }
 
@@ -62,6 +71,13 @@ export const ChangePassword = () => {
         bottomText="¿Recuerdas tu contraseña?"
         bottomLinkText="Inicia sesión"
         bottomLinkHref="/login"
+        extra={
+          error && (
+            <div className="text-center text-sm text-red-500 font-averia mb-2">
+              {error}
+            </div>
+          )
+        }
       />
     </div>
   );

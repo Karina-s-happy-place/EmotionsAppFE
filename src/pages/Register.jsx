@@ -10,21 +10,26 @@ export const Register = () => {
     password: "",
     confirmPassword: "",
   });
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
+    if (error) setError("");
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log("Registrarse con:", form);
-    // Aquí va la lógica de validación y registro
-    if (form.password !== form.confirmPassword) {
-      alert("Las contraseñas no coinciden");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!form.name || !form.email || !form.password || !form.confirmPassword) {
+      setError("Por favor, complete todos los campos");
       return;
     }
 
-    // Aquí va la lógica para enviar los datos al backend
-    // y luego redirigir si todo va bien
+    if (form.password !== form.confirmPassword) {
+      setError("Las contraseñas no coinciden");
+      return;
+    }
+
     navigate("/login");
   };
 
@@ -74,6 +79,13 @@ export const Register = () => {
         bottomText="¿Ya tienes cuenta?"
         bottomLinkText="Inicia sesión"
         bottomLinkHref="/login"
+        extra={
+          error && (
+            <div className="text-center text-sm text-red-500 font-averia mb-2">
+              {error}
+            </div>
+          )
+        }
       />
     </div>
   );
