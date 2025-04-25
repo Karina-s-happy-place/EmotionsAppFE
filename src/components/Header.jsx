@@ -25,7 +25,7 @@ export const Header = () => {
         <div className="text-[#392F24] text-xl md:text-2xl font-bold italic font-averia">
           EmotionsApp
         </div>
-        {/* Menú completo en pantallas medianas en adelante */}
+       
         <div className="hidden md:flex items-center gap-8">
           <div
             className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
@@ -45,12 +45,15 @@ export const Header = () => {
           </div>
         </div>
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-[#392F24] focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="text-[#392F24] focus:outline-none"
+          >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
-      {/* Menú móvil */}
+
       {isOpen && (
         <div className="md:hidden mt-2 space-y-2">
           <div
