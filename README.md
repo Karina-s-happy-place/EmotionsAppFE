@@ -52,7 +52,8 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 ![userflow](https://github.com/user-attachments/assets/94596a70-9356-4b34-a671-2abe6e0a996b)
 
 [![Mermaid](https://img.shields.io/badge/-Mermaid-0084C8?style=flat&logo=mermaid&logoColor=white)](https://www.mermaidchart.com/app/projects/8fabd736-e28b-46db-a01a-06773fcba785/diagrams/a3bbbbf6-ac75-4dc7-ad18-0c3a48464d95/version/v0.1/edit)
-![UML-EmotionsApp](https://github.com/user-attachments/assets/64aad70d-0b2a-493c-9b73-452e097fd2a7)
+![UML-EmotionsApp](https://github.com/user-attachments/assets/19fbb58b-6c4c-46cb-9404-2c2a80a20ef4)
+
 
 
 ## 📦 Requirements
