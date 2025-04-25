@@ -21,7 +21,7 @@ export const Login = () => {
       setError("Por favor, ingresa usuario y contraseña");
       return;
     }
-    navigate("/dashboard");
+    navigate("/emotion-register");
   };
 
   return (

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LoginRegisterButton } from "./buttons/LoginRegisterButton";
 import { useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -23,7 +24,9 @@ export const Header = () => {
     <header className="w-full bg-[#8A734F] px-4 md:px-8">
       <div className="flex items-center justify-between h-16">
         <div className="text-[#392F24] text-xl md:text-2xl font-bold italic font-averia">
+        <Link to="/" className="text-[#392F24] text-2xl font-averia italic font-bold">
           EmotionsApp
+        </Link>
         </div>
        
         <div className="hidden md:flex items-center gap-8">
