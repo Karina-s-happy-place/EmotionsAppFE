@@ -55,6 +55,16 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 ![UML-EmotionsApp](https://github.com/user-attachments/assets/19fbb58b-6c4c-46cb-9404-2c2a80a20ef4)
 
 
+ ## Documentation and organization
+![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)
+![Mermaid](https://img.shields.io/badge/-Mermaid-0084C8?style=flat&logo=mermaid&logoColor=white)
+![Canva](https://img.shields.io/badge/-Canva-00C4CC?logo=canva&logoColor=white&style=flat)
+![Jira](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)
+![Confluence](https://img.shields.io/badge/-Confluence-172B4D?style=flat&logo=confluence&logoColor=white)
+![Notion](https://img.shields.io/badge/-Notion-000000?style=flat&logo=notion&logoColor=white)
+![Atlassian](https://img.shields.io/badge/-Atlassian-0052CC?logo=atlassian&logoColor=white&style=flat)
+![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=flat&logo=postman&logoColor=white)
+
 
 ## 📦 Requirements
 
