@@ -1,80 +1,25 @@
 import React from "react";
 
-export const ContentCard = () => {
+export const ContentCard = ({ title, items }) => {
   return (
-    <div className="w-[375px] h-[234px] relative bg-[rgba(204,198,192,0.80)] overflow-hidden rounded-[20px]">
-     
-      <p className="absolute left-[152px] top-0 text-[#392F24] text-[25px] font-averia break-words">
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className=""
-        >
-          Cine
-        </a>
-      </p>
-
-      <p className="absolute left-[32px] top-[36px] w-[370px] h-[26px] text-[#392F24] text-[16px] font-averia font-bold underline break-words">
-        <a
-          href="https://www.filmaffinity.com/es/film294674.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          En busca de la felicidad (2006)
-        </a>
-      </p>
-      <p className="absolute left-[32px] top-[67px] w-[370px] h-[26px] text-[#392F24] text-[16px] font-averia font-bold underline break-words">
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          La vida es bella (1997)
-        </a>
-      </p>
-      <p className="absolute left-[32px] top-[95px] w-[370px] h-[26px] text-[#392F24] text-[16px] font-averia font-bold underline break-words">
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Luca (2021)
-        </a>
-      </p>
-      <p className="absolute left-[32px] top-[126px] w-[370px] h-[27px] text-[#392F24] text-[16px] font-averia font-bold underline break-words">
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Bajo la misma estrella (2014)
-        </a>
-      </p>
-      <p className="absolute left-[32px] top-[153px] w-[368px] h-[24px] text-[#392F24] text-[16px] font-averia font-bold underline break-words">
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          El lado bueno de las cosas (2012)
-        </a>
-      </p>
-      <p className="absolute left-[32px] top-[181px] w-[370px] h-[26px] text-[#392F24] text-[16px] font-averia font-bold underline break-words">
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Un monstruo viene a verme (2016)
-        </a>
-      </p>
+    <div className="w-[390px] h-[275px] p-[13px] bg-[#CCC6C0]/80 overflow-hidden rounded-[20px] outline outline-offset-[-1px] inline-flex flex-col justify-start items-center gap-[5px]">
+      <div className="self-stretch text-center text-[#5E4F3E] text-[25px] font-averia font-bold break-words">
+        {title}
+      </div>
+      <div className="w-[184px] h-[135px] text-[#392F24] text-[12px] font-averia font-light leading-[21px] tracking-[0.24px] break-words">
+        {items.map((item, index) => (
+          <p key={index} className="break-words">
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              {item.label}
+            </a>
+          </p>
+        ))}
+      </div>
     </div>
   );
 };

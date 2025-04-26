@@ -3,6 +3,7 @@ import { EmotionCard } from "../components/cards/EmotionCard";
 import { AddMoreExploreButton } from "../components/buttons/AddMoreExploreButton";
 import { useNavigate } from "react-router-dom";
 
+
 export const HomeDashboard = () => {
   const navigate = useNavigate();
 
@@ -17,7 +18,7 @@ export const HomeDashboard = () => {
       image: "/hapiness.jpg",
       title: "Feliz",
       description:
-        "Esa sensación de valorar lo que tienes y disfrutar del presente; aprender a enfrentarlos con optimismo es clave.",
+        "Esa sensación de valorar lo que tienes y disfrutar del presente. No, no es ausencia de problemas, sino aprender a enfrentarlos con optimismo y la mejor actitud.",
     },
     {
       image: "/angry.jpg",
@@ -82,6 +83,8 @@ export const HomeDashboard = () => {
           onClick={() => navigate("/login")}
         />
       </div>
+
+    
     </div>
   );
 };

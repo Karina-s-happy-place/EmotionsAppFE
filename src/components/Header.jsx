@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import { LoginRegisterButton } from "./buttons/LoginRegisterButton";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({ isLoggedIn = false, hideAbout = false }) => {
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const normalizedPath =
+    location.pathname.length > 1 && location.pathname.endsWith("/")
+      ? location.pathname.slice(0, -1)
+      : location.pathname;
+      
+  const authRoutes = ["/login", "/register", "/forgot-password", "/change-password"];
+  const isAuthPage = authRoutes.includes(normalizedPath);
+  const effectiveIsLoggedIn = isAuthPage ? false : isLoggedIn;
+
   const [isOpen, setIsOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const handleLoginClick = () => {
     navigate("/login");
@@ -19,30 +32,102 @@ export const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const toggleProfile = () => {
+    setIsProfileOpen(!isProfileOpen);
+  };
+
+  const handleNewNote = () => {
+    navigate("/emotion-register");
+    setIsProfileOpen(false);
+  };
+
+  const handleHistory = () => {
+    navigate("/emotion-history");
+    setIsProfileOpen(false);
+  };
+
+  const handleExplore = () => {
+    navigate("/sadness");
+    setIsProfileOpen(false);
+  };
+
+  const handleLogout = () => {
+    navigate("/login");
+    setIsProfileOpen(false);
+  };
+
   return (
     <header className="w-full bg-[#8A734F] px-4 md:px-8">
       <div className="flex items-center justify-between h-16">
         <div className="text-[#392F24] text-xl md:text-2xl font-bold italic font-averia">
-          EmotionsApp
-        </div>
-       
-        <div className="hidden md:flex items-center gap-8">
-          <div
-            className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
-            onClick={() => navigate("/about")}
+          <Link
+            to="/"
+            className="text-[#392F24] text-2xl font-averia italic font-bold"
           >
-            Sobre nosotros
-          </div>
-          <div className="flex gap-4">
-            <LoginRegisterButton
-              text="Iniciar sesión"
-              onClick={handleLoginClick}
-            />
-            <LoginRegisterButton
-              text="Crear cuenta"
-              onClick={handleRegisterClick}
-            />
-          </div>
+            EmotionsApp
+          </Link>
+        </div>
+        <div className="hidden md:flex items-center gap-8">
+          
+          {!hideAbout && (
+            <div
+              className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
+              onClick={() => navigate("/about")}
+            >
+              Sobre nosotros
+            </div>
+          )}
+          {effectiveIsLoggedIn ? (
+            <div className="relative">
+              <button
+                onClick={toggleProfile}
+                className="flex items-center text-[#392F24] text-base font-bold font-averia cursor-pointer focus:outline-none"
+              >
+                Perfil
+              </button>
+              {isProfileOpen && (
+                <div className="absolute right-0 mt-2 w-40 bg-[#8A734F] rounded-md shadow-lg z-10">
+                  <ul className="py-1">
+                    <li
+                      onClick={handleNewNote}
+                      className="block px-4 py-2 text-sm text-[#392F24] hover:underline font-averia cursor-pointer"
+                    >
+                      Nueva nota ✍️
+                    </li>
+                    <li
+                      onClick={handleHistory}
+                      className="block px-4 py-2 text-sm text-[#392F24] hover:underline font-averia cursor-pointer"
+                    >
+                      Historial 🗂️
+                    </li>
+                    <li
+                      onClick={handleExplore}
+                      className="block px-4 py-2 text-sm text-[#392F24] hover:underline font-averia cursor-pointer"
+                    >
+                      Explorar 🔍
+                    </li>
+                    <li
+                      onClick={handleLogout}
+                      className="block px-4 py-2 text-sm text-[#392F24] hover:underline font-averia cursor-pointer"
+                    >
+                      Cerrar sesión 🚪
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="flex gap-4">
+              <LoginRegisterButton
+                text="Iniciar sesión"
+                onClick={handleLoginClick}
+              />
+              <LoginRegisterButton
+                text="Crear cuenta"
+                onClick={handleRegisterClick}
+              />
+            </div>
+          )}
         </div>
         <div className="md:hidden">
           <button
@@ -56,31 +141,78 @@ export const Header = () => {
 
       {isOpen && (
         <div className="md:hidden mt-2 space-y-2">
-          <div
-            className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
-            onClick={() => {
-              setIsOpen(false);
-              navigate("/about");
-            }}
-          >
-            Sobre nosotros
-          </div>
-          <div className="flex flex-col gap-2">
-            <LoginRegisterButton
-              text="Iniciar sesión"
+         
+          {!hideAbout && (
+            <div
+              className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
               onClick={() => {
                 setIsOpen(false);
-                handleLoginClick();
+                navigate("/about");
               }}
-            />
-            <LoginRegisterButton
-              text="Crear cuenta"
-              onClick={() => {
-                setIsOpen(false);
-                handleRegisterClick();
-              }}
-            />
-          </div>
+            >
+              Sobre nosotros
+            </div>
+          )}
+          {effectiveIsLoggedIn ? (
+            <div className="relative">
+              <button
+                onClick={toggleProfile}
+                className="w-full text-left text-[#392F24] text-base font-bold font-averia cursor-pointer focus:outline-none"
+              >
+                Perfil
+              </button>
+              {isProfileOpen && (
+                <div className="mt-2 bg-white rounded-md shadow-lg">
+                  <ul className="py-1">
+                    <li
+                      onClick={() => {
+                        handleNewNote();
+                        setIsOpen(false);
+                      }}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                    >
+                      Nueva nota
+                    </li>
+                    <li
+                      onClick={() => {
+                        handleHistory();
+                        setIsOpen(false);
+                      }}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                    >
+                      Historial
+                    </li>
+                    <li
+                      onClick={() => {
+                        handleLogout();
+                        setIsOpen(false);
+                      }}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                    >
+                      Cerrar sesión
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="flex flex-col gap-2">
+              <LoginRegisterButton
+                text="Iniciar sesión"
+                onClick={() => {
+                  setIsOpen(false);
+                  handleLoginClick();
+                }}
+              />
+              <LoginRegisterButton
+                text="Crear cuenta"
+                onClick={() => {
+                  setIsOpen(false);
+                  handleRegisterClick();
+                }}
+              />
+            </div>
+          )}
         </div>
       )}
     </header>
