@@ -1,38 +1,94 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export const ReflectionCard = ({ onEdit, onDelete }) => {
+export const ReflectionCard = ({ note, onUpdate, onDelete }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedText, setEditedText] = useState(note.text);
+
+ 
+  useEffect(() => {
+    setEditedText(note.text);
+  }, [note.text]);
+
+  const handleSave = () => {
+    if (editedText.trim() === "") {
+     
+      return;
+    }
+    console.log("Saving note", note.id, editedText);
+    onUpdate(note.id, { text: editedText });
+    setIsEditing(false);
+  };
+
+  const handleCancel = () => {
+    console.log("Cancelling edit for note", note.id);
+    setEditedText(note.text);
+    setIsEditing(false);
+  };
+
   return (
-    <div className="w-[284px] h-[180px] relative bg-white overflow-hidden rounded-[8px]">
+    <div className="w-[284px] h-[180px] relative bg-white overflow-hidden rounded-[8px] shadow">
       <div className="absolute left-[8px] top-[21px] w-[268px] h-[127px] flex flex-col justify-center items-center text-center">
         <span className="text-[#392F24] text-[14px] font-averia font-bold leading-[22.4px] break-words">
-          Hoy me di cuenta de algo importante:
+          {note.emotion}
           <br />
         </span>
-        <span className="text-[#392F24] text-[14px] font-averia font-normal leading-[22.4px] break-words">
-          No hay emociones buenas o malas, solo señales que me hablan de lo que
-          necesito. A veces me cuesta escucharlas, pero cada emoción me enseña
-          algo valioso.
-          <br />
-        </span>
+        {isEditing ? (
+          <textarea
+            className="w-full h-full p-2 border border-gray-300 outline-none resize-none"
+            value={editedText}
+            onChange={(e) => setEditedText(e.target.value)}
+          />
+        ) : (
+          <span className="text-[#392F24] text-[14px] font-averia font-normal leading-[22.4px] break-words">
+            {note.text}
+            <br />
+          </span>
+        )}
       </div>
 
-      <button
-        onClick={onEdit}
-        className="absolute left-[74px] top-[130px] w-[45px] h-[36px] overflow-hidden focus:outline-none"
-      >
-        <span className="absolute left-[5px] top-[4px] w-[36px] h-[28px] items-center justify-center text-center text-[#392F24] text-[20px] font-averia font-normal leading-[32px] cursor-pointer">
-          ✏️
-        </span>
-      </button>
-
-      <button
-        onClick={onDelete}
-        className="absolute left-[119px] top-[132px] w-[45px] h-[36px] overflow-hidden focus:outline-none"
-      >
-        <span className="absolute left-[5px] top-[4px] w-[36px] h-[28px]  items-center justify-center text-center text-[#392F24] text-[20px] font-averia font-normal leading-[32px] cursor-pointer">
-          ❌
-        </span>
-      </button>
+      <div className="absolute bottom-2 left-1/2 z-10 transform -translate-x-1/2 flex gap-2">
+        {isEditing ? (
+          <>
+            <button
+              onClick={handleSave}
+              className="w-9 h-9 flex items-center justify-center text-xl font-averia text-[#392F24] bg-green-200 rounded focus:outline-none"
+              title="Guardar"
+            >
+              💾
+            </button>
+            <button
+              onClick={handleCancel}
+              className="w-9 h-9 flex items-center justify-center text-xl font-averia text-[#392F24] bg-red-200 rounded focus:outline-none"
+              title="Cancelar"
+            >
+              ❌
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              onClick={() => {
+                console.log("Editar clicked");
+                setIsEditing(true);
+              }}
+              className="w-9 h-9 flex items-center justify-center text-xl font-averia text-[#392F24] focus:outline-none"
+              title="Editar"
+            >
+              ✏️
+            </button>
+            <button
+              onClick={() => {
+                console.log("Eliminar clicked");
+                onDelete(note.id);
+              }}
+              className="w-9 h-9 flex items-center justify-center text-xl font-averia text-[#392F24] focus:outline-none"
+              title="Eliminar"
+            >
+              ❌
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 };

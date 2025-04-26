@@ -1,13 +1,26 @@
+// src/components/forms/EmotionRegisterForm.jsx
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useNotes } from "../NotesContext.jsx"; // Ajusta la ruta según tu estructura
 import { LoginRegisterButton } from "../buttons/LoginRegisterButton";
 
 export const EmotionRegisterForm = () => {
+  const navigate = useNavigate();
+  const { addNote } = useNotes();
   const [emotion, setEmotion] = useState("");
-  const [notes, setNotes] = useState("");
+  const [notesText, setNotesText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Datos del registro emocional:", { emotion, notes });
+
+    const newNote = {
+      emotion,
+      text: notesText,
+    };
+
+    addNote(newNote);
+
+    navigate("/emotion-history");
   };
 
   return (
@@ -18,7 +31,6 @@ export const EmotionRegisterForm = () => {
         </h2>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-
         <div className="flex flex-col">
           <label className="mb-1 text-[#392F24] text-sm font-averia font-bold">
             Emoción
@@ -44,15 +56,14 @@ export const EmotionRegisterForm = () => {
             Notas positivas
           </label>
           <textarea
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
+            value={notesText}
+            onChange={(e) => setNotesText(e.target.value)}
             placeholder="Escribe aquí cómo te sientes..."
             className="w-full p-2 border border-gray-400 font-averia rounded-md resize-none focus:outline-none text-sm"
             rows={3}
             required
           />
         </div>
-
         <div className="flex justify-center mt-2">
           <LoginRegisterButton text="Registrar" type="submit" />
         </div>
@@ -60,5 +71,3 @@ export const EmotionRegisterForm = () => {
     </div>
   );
 };
-
-export default EmotionRegisterForm;

@@ -26,12 +26,12 @@ export const Header = ({ isLoggedIn = false }) => {
   };
 
   const handleNewNote = () => {
-    navigate("/new-note");
+    navigate("/emotion-register");
     setIsProfileOpen(false);
   };
 
   const handleHistory = () => {
-    navigate("/history");
+    navigate("/emotion-history");
     setIsProfileOpen(false);
   };
 
@@ -192,4 +192,4 @@ export const Header = ({ isLoggedIn = false }) => {
   );
 };
 
-export default Header;
+
