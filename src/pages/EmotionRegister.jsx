@@ -1,8 +1,11 @@
 import React from "react";
 import { AddMoreExploreButton } from "../components/buttons/AddMoreExploreButton";
 import {EmotionRegisterForm} from "../components/forms/EmotionRegisterForm";
+import { useNavigate } from "react-router-dom";
 
 export const EmotionRegister = () => {
+const navigate = useNavigate();
+
   return (
     <div
       className="relative min-h-screen bg-cover bg-center"
@@ -24,10 +27,10 @@ export const EmotionRegister = () => {
         </div>
 
         <div className="mt-8 flex flex-nowrap justify-center gap-4">
-          <AddMoreExploreButton text="Triste" />
-          <AddMoreExploreButton text="Feliz" />
-          <AddMoreExploreButton text="Enfadado" />
-          <AddMoreExploreButton text="Ansioso" />
+          <AddMoreExploreButton text="Triste" onClick={() => navigate("/sadness")}/>
+          <AddMoreExploreButton text="Feliz" onClick={() => navigate("/construction")}/>
+          <AddMoreExploreButton text="Enfadado" onClick={() => navigate("/construction")}/>
+          <AddMoreExploreButton text="Ansioso" onClick={() => navigate("/construction")}/>
         </div>
 
         <div className="mt-12">

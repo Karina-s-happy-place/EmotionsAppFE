@@ -8,7 +8,9 @@ import { ChangePassword } from "../pages/ChangePassword";
 import { AboutUs } from "../pages/AboutUs";
 import { EmotionRegister } from "../pages/EmotionRegister";
 import { EmotionHistory } from "../pages/EmotionHistory";
-import { NotesProvider } from "../components/NotesContext.jsx"; 
+import { NotesProvider } from "../components/NotesContext.jsx";
+import { SadnessView } from "../pages/SadnessView.jsx";
+import { ConstructionPage } from "../pages/ConstructionPage";
 
 export const AppRouter = () => {
   return (
@@ -25,6 +27,8 @@ export const AppRouter = () => {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/emotion-register" element={<EmotionRegister />} />
             <Route path="/emotion-history" element={<EmotionHistory />} />
+            <Route path="/sadness" element={<SadnessView />} />
+            <Route path="/construction" element={<ConstructionPage />} />
           </Route>
         </Routes>
       </NotesProvider>

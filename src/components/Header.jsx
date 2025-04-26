@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import { LoginRegisterButton } from "./buttons/LoginRegisterButton";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export const Header = ({ isLoggedIn = false }) => {
+export const Header = ({ isLoggedIn = false, hideAbout = false }) => {
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const normalizedPath =
+    location.pathname.length > 1 && location.pathname.endsWith("/")
+      ? location.pathname.slice(0, -1)
+      : location.pathname;
+      
+  const authRoutes = ["/login", "/register", "/forgot-password", "/change-password"];
+  const isAuthPage = authRoutes.includes(normalizedPath);
+  const effectiveIsLoggedIn = isAuthPage ? false : isLoggedIn;
+
   const [isOpen, setIsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
@@ -43,7 +54,6 @@ export const Header = ({ isLoggedIn = false }) => {
   return (
     <header className="w-full bg-[#8A734F] px-4 md:px-8">
       <div className="flex items-center justify-between h-16">
-       
         <div className="text-[#392F24] text-xl md:text-2xl font-bold italic font-averia">
           <Link
             to="/"
@@ -53,13 +63,16 @@ export const Header = ({ isLoggedIn = false }) => {
           </Link>
         </div>
         <div className="hidden md:flex items-center gap-8">
-          <div
-            className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
-            onClick={() => navigate("/about")}
-          >
-            Sobre nosotros
-          </div>
-          {isLoggedIn ? (
+          {/* Renderiza "Sobre nosotros" solo si hideAbout es false */}
+          {!hideAbout && (
+            <div
+              className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
+              onClick={() => navigate("/about")}
+            >
+              Sobre nosotros
+            </div>
+          )}
+          {effectiveIsLoggedIn ? (
             <div className="relative">
               <button
                 onClick={toggleProfile}
@@ -78,7 +91,7 @@ export const Header = ({ isLoggedIn = false }) => {
                     </li>
                     <li
                       onClick={handleHistory}
-                      className="block px-4 py-2 text-sm text-[#392F24] hover:underline  font-averia cursor-pointer"
+                      className="block px-4 py-2 text-sm text-[#392F24] hover:underline font-averia cursor-pointer"
                     >
                       Historial 🗂️
                     </li>
@@ -117,16 +130,19 @@ export const Header = ({ isLoggedIn = false }) => {
 
       {isOpen && (
         <div className="md:hidden mt-2 space-y-2">
-          <div
-            className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
-            onClick={() => {
-              setIsOpen(false);
-              navigate("/about");
-            }}
-          >
-            Sobre nosotros
-          </div>
-          {isLoggedIn ? (
+          {/* En la vista móvil, solo se muestra "Sobre nosotros" si hideAbout es false */}
+          {!hideAbout && (
+            <div
+              className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
+              onClick={() => {
+                setIsOpen(false);
+                navigate("/about");
+              }}
+            >
+              Sobre nosotros
+            </div>
+          )}
+          {effectiveIsLoggedIn ? (
             <div className="relative">
               <button
                 onClick={toggleProfile}
@@ -191,5 +207,3 @@ export const Header = ({ isLoggedIn = false }) => {
     </header>
   );
 };
-
-

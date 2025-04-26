@@ -1,27 +1,20 @@
 import React from "react";
 
-export const ContentCard = ({ title, items, className = "" }) => {
+export const ContentCard = ({ title, items = [], className = "" }) => {
   return (
     <div
-      className={`w-[375px] h-[234px] relative bg-[rgba(204,198,192,0.80)] overflow-hidden rounded-[20px] ${className}`}
+      className={`
+        w-[253px] h-[257px] p-[13px] bg-[#CCC6C0]/90 overflow-hidden 
+        rounded-[20px] outline outline-black outline-offset-[-1px] 
+        inline-flex flex-col justify-start items-center gap-[5px] ${className}
+      `}
     >
-      <p className="absolute left-[152px] top-0 text-[#392F24] text-[25px] font-averia break-words">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          {title}
-        </a>
-      </p>
-
-      {items &&
-        items.map((item, index) => (
-          <p
-            key={index}
-            className="absolute left-[32px] text-[#392F24] text-[16px] font-averia font-bold underline break-words"
-            style={{
-              top: `${36 + index * 30}px`,
-              width: "370px",
-              height: "26px",
-            }}
-          >
+      <div className="self-stretch text-center text-[#5E4F3E] text-[25px] font-averia font-bold break-words">
+        {title}
+      </div>
+      <div className="w-[184px] h-[135px] text-[#392F24] text-[12px] font-averia font-light leading-[21px] tracking-[0.24px] break-words">
+        {items.map((item, index) => (
+          <p key={index} className="break-words">
             <a
               href={item.href}
               target="_blank"
@@ -32,6 +25,7 @@ export const ContentCard = ({ title, items, className = "" }) => {
             </a>
           </p>
         ))}
+      </div>
     </div>
   );
 };
