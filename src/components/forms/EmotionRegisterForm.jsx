@@ -7,26 +7,26 @@ export const EmotionRegisterForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log("Datos del registro emocional:", { emotion, notes });
   };
 
   return (
-    <div className="mx-auto bg-[rgba(241,229,218,0.90)] rounded-3xl p-6 max-w-3xl relative">
-      <div className="text-center mb-6">
-        <h2 className="text-2xl md:text-3xl font-averia font-bold text-[#5E4F3E]">
+    <div className="w-full px-4 py-6 mx-auto bg-[rgba(241,229,218,0.90)] rounded-3xl relative sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px]">
+      <div className="text-center mb-4">
+        <h2 className="text-xl md:text-2xl font-averia font-bold text-[#5E4F3E]">
           Registro emocional
         </h2>
       </div>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+
         <div className="flex flex-col">
-          <label className="mb-2 text-[#392F24] text-lg font-averia font-bold">
+          <label className="mb-1 text-[#392F24] text-sm font-averia font-bold">
             Emoción
           </label>
           <select
             value={emotion}
             onChange={(e) => setEmotion(e.target.value)}
-            className="p-2 border border-gray-400 font-averia rounded-md focus:outline-none"
+            className="w-full p-2 border border-gray-400 font-averia rounded-md focus:outline-none text-sm"
             required
           >
             <option value="" disabled>
@@ -40,23 +40,25 @@ export const EmotionRegisterForm = () => {
         </div>
 
         <div className="flex flex-col">
-          <label className="mb-2 text-[#392F24] text-lg font-averia font-bold">
+          <label className="mb-1 text-[#392F24] text-sm font-averia font-bold">
             Notas positivas
           </label>
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Escribe aquí cómo te sientes..."
-            className="p-2 border border-gray-400 font-averia rounded-md resize-none focus:outline-none"
-            rows={4}
+            className="w-full p-2 border border-gray-400 font-averia rounded-md resize-none focus:outline-none text-sm"
+            rows={3}
             required
           />
         </div>
 
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-2">
           <LoginRegisterButton text="Registrar" type="submit" />
         </div>
       </form>
     </div>
   );
 };
+
+export default EmotionRegisterForm;

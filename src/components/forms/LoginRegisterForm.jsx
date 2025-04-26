@@ -22,7 +22,7 @@ export const LoginRegisterForm = ({
     
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(value)) {
-        error = "Correo inválido.";
+        error = "Introduce un correo válido.";
       }
     }
 

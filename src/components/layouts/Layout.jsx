@@ -4,14 +4,21 @@ import { Header } from "../Header";
 import { Footer } from "../Footer";
 
 export const Layout = () => {
+  
+  const isAuthenticated = true;
+
   const headerProps = {
     title: "EmotionsApp",
-    links: [
-      { href: "/dashboard", text: "Dashboard" },
-      { href: "/login", text: "Iniciar sesión" },
-      { href: "/register", text: "Crear cuenta" },
-    ],
+ 
+    links: isAuthenticated
+      ? [{ href: "/dashboard", text: "Dashboard" }]
+      : [
+          { href: "/dashboard", text: "Dashboard" },
+          { href: "/login", text: "Iniciar sesión" },
+          { href: "/register", text: "Crear cuenta" },
+        ],
     buttons: [],
+    isLoggedIn: isAuthenticated, 
   };
 
   const footerProps = {

@@ -12,10 +12,9 @@ export const AboutUs = () => {
         </h1>
 
         <div className="flex flex-col lg:flex-row items-center gap-8 max-w-5xl w-full">
-          <div className="flex-1 bg-[#8A734F]/70 rounded-[32px] p-8">
-            <p className="text-2xl md:text-4xl text-[#F1E5DA] font-averia font-bold leading-relaxed text-center">
-              Queremos ofrecer un espacio digital y accesible donde los usuarios puedan
-              explorar recursos sobre sus estados de ánimo y salud emocional.
+          <div className="bg-[#8A734F]/70 rounded-[32px] p-8 h-[300px] overflow-y-auto">
+            <p className="text-2xl md:text-4xl text-[#F1E5DA] font-averia font-bold leading-relaxed text-center lg:text-left">
+              Queremos ofrecer un espacio digital y accesible donde los usuarios puedan explorar recursos sobre sus estados de ánimo y salud emocional. EmotionsApp busca impactar positivamente en la vida de las personas, invitándolas a vivir sus emociones con más consciencia, sin juzgarse y con herramientas que puedan utilizar en cualquier momento. Es una app sencilla, pero con un propósito claro: cuidar de lo que sentimos, un día a la vez.
             </p>
           </div>
 
@@ -29,3 +28,5 @@ export const AboutUs = () => {
     </div>
   );
 };
+
+export default AboutUs;
