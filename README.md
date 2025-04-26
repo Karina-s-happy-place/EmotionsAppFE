@@ -3,6 +3,7 @@
 **EmotionsApp** is a web application designed to help users understand and manage their emotional states through personalized content and self-tracking tools.
 
 ---
+![download](https://github.com/user-attachments/assets/5a109248-980d-4639-afd7-fa441b5323e2)
 
 ## 🌟 Features
 
@@ -50,7 +51,6 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 
 - [![Draw.io](https://img.shields.io/badge/-Draw.io-F08705?style=flat&logo=diagrams.net&logoColor=white)](https://overflow.io/n/3d20a53a-22e3-11f0-a59b-0affed1eab2b/all-documents)
 ![Userflow-EmotionsApp](https://github.com/user-attachments/assets/0f4b38ec-3922-44be-9385-aed97414b4e6)
-
 
 - [![Mermaid](https://img.shields.io/badge/-Mermaid-0084C8?style=flat&logo=mermaid&logoColor=white)](https://www.mermaidchart.com/app/projects/8fabd736-e28b-46db-a01a-06773fcba785/diagrams/a3bbbbf6-ac75-4dc7-ad18-0c3a48464d95/version/v0.1/edit)
 ![UML-EmotionsApp](https://github.com/user-attachments/assets/19fbb58b-6c4c-46cb-9404-2c2a80a20ef4)
