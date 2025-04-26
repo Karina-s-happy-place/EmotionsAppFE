@@ -43,7 +43,7 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 
 ## Required documentation 
 - [![Jira](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)](https://karinalrg16.atlassian.net/jira/software/projects/EA/boards/3/backlog)
-![Jira-EmotionsApp](https://github.com/user-attachments/assets/e08f0173-ccfa-470d-954a-0ced45b2bbf9)
+![Jira-EmotionsApp](https://github.com/user-attachments/assets/d6ba98f1-bc33-43f3-9cbc-f1bc86fd365c)
 
 - [![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)](https://www.figma.com/design/cNBoRNBtppC03OO0Ux6Ox3/EmotionsApp?node-id=82-249&t=sW6QXyvjV5GdNMvb-0)
 - ![Figma-EmotionsApp](https://github.com/user-attachments/assets/79bb27e6-5d94-4f04-abff-54b0148a37e5)
@@ -53,7 +53,6 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 
 [![Mermaid](https://img.shields.io/badge/-Mermaid-0084C8?style=flat&logo=mermaid&logoColor=white)](https://www.mermaidchart.com/app/projects/8fabd736-e28b-46db-a01a-06773fcba785/diagrams/a3bbbbf6-ac75-4dc7-ad18-0c3a48464d95/version/v0.1/edit)
 ![UML-EmotionsApp](https://github.com/user-attachments/assets/19fbb58b-6c4c-46cb-9404-2c2a80a20ef4)
-
 
  ## Documentation and organization
 ![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)
@@ -65,9 +64,7 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 ![Atlassian](https://img.shields.io/badge/-Atlassian-0052CC?logo=atlassian&logoColor=white&style=flat)
 ![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=flat&logo=postman&logoColor=white)
 
-
 ## 📦 Requirements
-
 To run this project, you need to have the following installed on your machine:
 
 ### 🔧 General Tools
