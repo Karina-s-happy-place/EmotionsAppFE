@@ -1,4 +1,3 @@
-// src/pages/EmotionHistory.jsx
 import React from "react";
 import { useNotes } from "../components/NotesContext.jsx"; 
 import { ReflectionCard } from "../components/cards/ReflectionCard";
