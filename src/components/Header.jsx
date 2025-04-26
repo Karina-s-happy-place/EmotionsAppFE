@@ -46,6 +46,11 @@ export const Header = ({ isLoggedIn = false, hideAbout = false }) => {
     setIsProfileOpen(false);
   };
 
+  const handleExplore = () => {
+    navigate("/sadness");
+    setIsProfileOpen(false);
+  };
+
   const handleLogout = () => {
     navigate("/login");
     setIsProfileOpen(false);
@@ -63,7 +68,7 @@ export const Header = ({ isLoggedIn = false, hideAbout = false }) => {
           </Link>
         </div>
         <div className="hidden md:flex items-center gap-8">
-          {/* Renderiza "Sobre nosotros" solo si hideAbout es false */}
+          
           {!hideAbout && (
             <div
               className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
@@ -94,6 +99,12 @@ export const Header = ({ isLoggedIn = false, hideAbout = false }) => {
                       className="block px-4 py-2 text-sm text-[#392F24] hover:underline font-averia cursor-pointer"
                     >
                       Historial 🗂️
+                    </li>
+                    <li
+                      onClick={handleExplore}
+                      className="block px-4 py-2 text-sm text-[#392F24] hover:underline font-averia cursor-pointer"
+                    >
+                      Explorar 🔍
                     </li>
                     <li
                       onClick={handleLogout}
@@ -130,7 +141,7 @@ export const Header = ({ isLoggedIn = false, hideAbout = false }) => {
 
       {isOpen && (
         <div className="md:hidden mt-2 space-y-2">
-          {/* En la vista móvil, solo se muestra "Sobre nosotros" si hideAbout es false */}
+         
           {!hideAbout && (
             <div
               className="text-[#392F24] text-base font-bold font-averia cursor-pointer"
