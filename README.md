@@ -46,12 +46,13 @@ In today’s world, emotional distress like anxiety and sadness is often normali
 ![Jira-EmotionsApp](https://github.com/user-attachments/assets/d6ba98f1-bc33-43f3-9cbc-f1bc86fd365c)
 
 - [![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)](https://www.figma.com/design/cNBoRNBtppC03OO0Ux6Ox3/EmotionsApp?node-id=82-249&t=sW6QXyvjV5GdNMvb-0)
-- ![Figma-EmotionsApp](https://github.com/user-attachments/assets/79bb27e6-5d94-4f04-abff-54b0148a37e5)
+ ![Figma-EmotionsApp](https://github.com/user-attachments/assets/79bb27e6-5d94-4f04-abff-54b0148a37e5)
 
-[![Draw.io](https://img.shields.io/badge/-Draw.io-F08705?style=flat&logo=diagrams.net&logoColor=white)](https://app.diagrams.net/#G1e1u7lGxQaPTmuFsytsU6ry0hGtV9M9M7#%7B%22pageId%22%3A%22YR-R1HGNXxgNcGl1_lkE%22%7D)
-![userflow](https://github.com/user-attachments/assets/94596a70-9356-4b34-a671-2abe6e0a996b)
+- [![Draw.io](https://img.shields.io/badge/-Draw.io-F08705?style=flat&logo=diagrams.net&logoColor=white)](https://overflow.io/n/3d20a53a-22e3-11f0-a59b-0affed1eab2b/all-documents)
+![Userflow-EmotionsApp](https://github.com/user-attachments/assets/0f4b38ec-3922-44be-9385-aed97414b4e6)
 
-[![Mermaid](https://img.shields.io/badge/-Mermaid-0084C8?style=flat&logo=mermaid&logoColor=white)](https://www.mermaidchart.com/app/projects/8fabd736-e28b-46db-a01a-06773fcba785/diagrams/a3bbbbf6-ac75-4dc7-ad18-0c3a48464d95/version/v0.1/edit)
+
+- [![Mermaid](https://img.shields.io/badge/-Mermaid-0084C8?style=flat&logo=mermaid&logoColor=white)](https://www.mermaidchart.com/app/projects/8fabd736-e28b-46db-a01a-06773fcba785/diagrams/a3bbbbf6-ac75-4dc7-ad18-0c3a48464d95/version/v0.1/edit)
 ![UML-EmotionsApp](https://github.com/user-attachments/assets/19fbb58b-6c4c-46cb-9404-2c2a80a20ef4)
 
  ## Documentation and organization
