@@ -1,4 +1,3 @@
-// src/components/forms/EmotionRegisterForm.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotes } from "../NotesContext.jsx"; // Ajusta la ruta según tu estructura

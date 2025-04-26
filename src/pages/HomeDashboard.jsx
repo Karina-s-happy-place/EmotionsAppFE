@@ -3,7 +3,6 @@ import { EmotionCard } from "../components/cards/EmotionCard";
 import { AddMoreExploreButton } from "../components/buttons/AddMoreExploreButton";
 import { useNavigate } from "react-router-dom";
 
-
 export const HomeDashboard = () => {
   const navigate = useNavigate();
 
