@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useNotes } from "../NotesContext.jsx"; // Ajusta la ruta según tu estructura
+import { useNotes } from "../NotesContext.jsx"; 
 import { LoginRegisterButton } from "../buttons/LoginRegisterButton";
 
 export const EmotionRegisterForm = () => {

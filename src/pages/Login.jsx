@@ -15,13 +15,37 @@ export const Login = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.email || !form.password) {
       setError("Por favor, ingresa usuario y contraseña");
       return;
     }
-    navigate("/emotion-register");
+
+    try {
+      const response = await fetch("http://localhost:8080/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: form.email,
+          password: form.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Credenciales incorrectas");
+      }
+
+      console.log("📌 Token recibido:", data.token);
+      localStorage.setItem("token", data.token);
+
+      navigate("/emotion-register");
+    } catch (error) {
+      console.error(error);
+      setError(error.message || "Error al iniciar sesión");
+    }
   };
 
   return (
