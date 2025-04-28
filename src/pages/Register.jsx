@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export const Register = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    name: "",
+    fullName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -17,20 +17,32 @@ export const Register = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!form.name || !form.email || !form.password || !form.confirmPassword) {
-      setError("Por favor, complete todos los campos");
+    if (!form.fullName || !form.email || !form.password || !form.confirmPassword) {
+      setError("Por favor, completa todos los campos");
       return;
     }
-
-    if (form.password !== form.confirmPassword) {
-      setError("Las contraseñas no coinciden");
-      return;
+    try {
+      const response = await fetch("http://localhost:8080/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: form.fullName,
+          email: form.email,
+          password: form.password,
+          confirmPassword: form.confirmPassword,
+        }),
+      });
+      if (!response.ok) {
+        const errorData = await response.text();
+        throw new Error(errorData || "Error en el registro");
+      }
+      navigate("/login");
+    } catch (error) {
+      console.error("Error:", error.message);
+      setError("Error al registrar: " + error.message);
     }
-
-    navigate("/login");
   };
 
   return (
@@ -46,8 +58,8 @@ export const Register = () => {
           {
             label: "Nombre completo:",
             type: "text",
-            name: "name",
-            value: form.name,
+            name: "fullName",
+            value: form.fullName,
             onChange: handleChange,
             placeholder: "Introduce tu nombre y apellidos",
           },
